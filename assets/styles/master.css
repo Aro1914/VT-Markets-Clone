@@ -511,13 +511,11 @@ ul {
   flex-wrap: wrap;
   height: 100%;
   list-style: none;
-  /* transform: translate(-100%, 0); */
   animation: slider 10s linear infinite normal none;
 }
 
 @keyframes slider {
   0% {
-    /* transition: transform 0.5s; */
     transform: translate(0, 0);
   }
   20% {
@@ -534,7 +532,7 @@ ul {
     transform: translate(calc(-350px * 4), 0);
   }
   100% {
-    transform: translate(calc(-350px * 5), 0);    
+    transform: translate(calc(-350px * 5), 0);
   }
 }
 
@@ -570,14 +568,107 @@ ul {
   font-weight: normal;
 }
 
-.ghostly{
+.ghostly {
+  padding: 30px 20px 0;
   height: 722px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
 }
 
-.display-toggles{
+.display-toggles {
   padding: 0;
   margin: 0;
   list-style: none;
-  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+
+.ghostly .parent {
+  width: 100%;
+  overflow: hidden;
+  height: 647px;
+}
+
+.displays {
+  width: 100%;
+  display: flex;
+  height: 647px;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  transform: translate(-300%, 0);
+}
+
+.displays [class^="d"] {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background: url(../images/home_slide_bg.webp) no-repeat center top;
+  padding: 0 50px 35px;
+  background-size: cover;
+}
+
+.funny-image {
+  width: 55%;
+  height: 100%;
+  background-image: url(../images/home_swiper_row1_img1.png);
+}
+
+.text {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+.text span {
+  display: block;
+}
+
+.intro {
+  font-size: 20px;
+  font-family: "Oblivian Text Regular";
+  line-height: 1.7;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: normal;
+  font-family: "Oblivian Text Medium";
+  line-height: 1.2;
+}
+
+.text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 18px;
+  font-family: "Oblivian Text Medium";
+}
+
+.text ul li {
+  padding-left: 35px;
+  background: url(../images/icons-tools-tick.webp) no-repeat left center;
+}
+
+.text button {
+  min-width: 178px;
+  background: #fff;
+  border-radius: 35px;
+  padding: 14px 20px 12px;
+  display: inline-block;
+  color: #06122d;
+  font-size: 15px;
+  border: 1px solid #fff;
+  font-family: "Oblivian Text Medium";
 }
