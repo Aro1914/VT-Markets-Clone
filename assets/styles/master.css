@@ -575,6 +575,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  position: relative;
 }
 
 .display-toggles {
@@ -587,7 +588,25 @@ ul {
   gap: 40px;
 }
 
+.display-toggles li {
+  cursor: pointer;
+}
+
+.display-toggles li::after {
+  content: "";
+  height: 2.5px;
+  margin-top: 8px;
+  width: 100%;
+  background-color: #ffffff;
+  display: block;
+}
+
+.display-toggles li.in-view::after {
+  background-color: #00f0ff;
+}
+
 .ghostly .parent {
+  position: relative;
   width: 100%;
   overflow: hidden;
   height: 647px;
@@ -600,7 +619,8 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
-  transform: translate(-300%, 0);
+  transition: transform 0.3s;
+  /* transform: translate(-300%, 0); */
 }
 
 .displays [class^="d"] {
@@ -671,4 +691,73 @@ ul {
   font-size: 15px;
   border: 1px solid #fff;
   font-family: "Oblivian Text Medium";
+}
+
+.ghostly [class^="switch"] {
+  height: 40px;
+  width: 40px;
+  top: calc(50% + 40px);
+  position: absolute;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ghostly [class^="switch"]:hover {
+  background-color: #00f0ff;
+}
+
+.ghostly [class^="switch"]::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.switchToLeft {
+  left: 30px;
+  background-color: rgba(0, 238, 255, 0.259);
+}
+
+.switchToRight {
+  right: 30px;
+  background-color: #fff;
+}
+
+.switchToLeft::after {
+  background: url(../images/icons_swiper.webp) 0 0 no-repeat;
+}
+
+.switchToRight::after {
+  background: url(../images/icons_swiper.webp) -24px 0 no-repeat;
+}
+
+.app-access {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.app-access [class*="-"] {
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.app-access .g-play{
+  background-image: url(../images/google_play_0426.png);
+}
+
+.app-access .a-store{
+  background-image: url(../images/app_store.webp);
 }

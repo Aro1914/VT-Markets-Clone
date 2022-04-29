@@ -1,12 +1,18 @@
-const onClick = document.querySelector('.onClick'),
-    arrow = document.querySelector('.onClick .toggle span'), tongues = document.querySelector('.tongues'),
+const
+    onClick = document.querySelector('.onClick'),
+    arrow = document.querySelector('.onClick .toggle span'),
+    tongues = document.querySelector('.tongues'),
     dismissal = document.querySelector('.dismissal'),
     links = document.querySelectorAll('.nav-links-container > ul > li:not(.nav-links-container > ul li:last-child)'),
     hiddenContents = document.querySelectorAll('.hidden-content'),
     heros = document.querySelectorAll('.hero [class^="div"]'),
     heroes = document.querySelector('.heroes'),
-    indicators = document.querySelectorAll('.hero .indicators div');
-let toggle = true, s = 3;
+    indicators = document.querySelectorAll('.hero .indicators div'),
+    displayToggles = document.querySelectorAll('.display-toggles li'),
+    displays = document.querySelector('.displays'),
+    sliders = document.querySelectorAll('.ghostly [class^="switch"]'),
+    funnyImage = document.querySelectorAll('.funny-image');
+let toggle = true, mon = 0;
 
 
 [onClick, dismissal].forEach(el => el.addEventListener('click', () => {
@@ -88,7 +94,7 @@ links.forEach((link, index) => {
             counter = 0;
             const timer = setTimeout(() => {
                 heroes.style.transition = 'transform 0s';
-                heroes.style.transform = `translate(${counter}, 0 )`;
+                heroes.style.transform = `translate(${counter}, 0)`;
                 clearTimeout(timer);
             }, 301);
         }
@@ -100,11 +106,11 @@ links.forEach((link, index) => {
                 indicator.classList.remove('current');
             });
             indicator.classList.add('current');
-            heroes.style.transform = `translate(${index == 0 ? 0 : index == 1 ? '-100' : '-200'}%, 0 )`;
+            heroes.style.transform = `translate(${index == 0 ? 0 : index == 1 ? '-100' : '-200'}%, 0)`;
             index == 0 && (counter = 0);
             index == 2 ? (() => {
                 let c = setTimeout(() => {
-                    heroes.style.transform = `translate(-300%, 0 )`;
+                    heroes.style.transform = `translate(-300 %, 0)`;
                     clearInterval(swiper);
                     indicators.forEach(indicator => {
                         indicator.classList.remove('current');
@@ -113,11 +119,11 @@ links.forEach((link, index) => {
                     counter = 0;
                     const inTime = setTimeout(() => {
                         heroes.style.transition = 'transform 0s';
-                        heroes.style.transform = `translate(${counter}, 0 )`;
+                        heroes.style.transform = `translate(${counter}, 0)`;
                         swiper = setInterval(() => {
                             counter += 100;
                             heroes.style.transition = 'transform .3s';
-                            heroes.style.transform = `translate(-${counter}%, 0)`;
+                            heroes.style.transform = `translate(-${counter} %, 0)`;
                             switch (counter) {
                                 case 100:
                                     indicate(1);
@@ -135,7 +141,7 @@ links.forEach((link, index) => {
                                 counter = 0;
                                 const timer = setTimeout(() => {
                                     heroes.style.transition = 'transform 0s';
-                                    heroes.style.transform = `translate(${counter}, 0 )`;
+                                    heroes.style.transform = `translate(${counter}, 0)`;
                                     clearTimeout(timer);
                                 }, 1000);
                             }
@@ -148,7 +154,7 @@ links.forEach((link, index) => {
                 swiper = setInterval(() => {
                     counter += 100;
                     heroes.style.transition = 'transform .3s';
-                    heroes.style.transform = `translate(-${counter}%, 0)`;
+                    heroes.style.transform = `translate(-${counter} %, 0)`;
                     switch (counter) {
                         case 100:
                             indicate(1);
@@ -169,7 +175,7 @@ links.forEach((link, index) => {
                         counter = 0;
                         const timer = setTimeout(() => {
                             heroes.style.transition = 'transform 0s';
-                            heroes.style.transform = `translate(${counter}, 0 )`;
+                            heroes.style.transform = `translate(${counter}, 0)`;
                             clearTimeout(timer);
                         }, 301);
                     }
@@ -178,3 +184,80 @@ links.forEach((link, index) => {
     });
 })();
 
+// Funny Image code;
+
+var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+window.onscroll = function () {
+    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (previousPosition > currentPosition) {
+        console.log('scrolling up');
+    } else {
+        console.log('scrolling down');
+    }
+
+    previousPosition = currentPosition;
+};
+
+
+
+(() => {
+    displayToggles.forEach((toggle, index) => {
+        toggle.addEventListener('click', () => {
+            displayToggles.forEach(each => {
+                each.classList.remove('in-view');
+            });
+            toggle.classList.add('in-view');
+            displays.style.transform = `translate(-${index * 100}%, 0)`;
+            mon = index;
+            index == 0 ?
+                (sliders[0].style.backgroundColor = 'rgba(0, 238, 255, 0.259)',
+                    sliders[1].style.backgroundColor = '#fff') :
+                index == 3 ?
+                    (sliders[1].style.backgroundColor = 'rgba(0, 238, 255, 0.259)',
+                        sliders[0].style.backgroundColor = '#fff') :
+                    sliders.forEach(slider => {
+                        slider.style.backgroundColor = '#fff';
+                    });
+        });
+    });
+
+    sliders.forEach((slider, index) => {
+        slider.addEventListener('click', () => {
+            index == 0 ?
+                (() => {
+                    mon > 1 ? (() => {
+                        displays.style.transform = `translate(-${(mon * 100) - 100}%, 0)`;
+                        mon--;
+                    })() :
+                        mon == 1 && (() => {
+                            displays.style.transform = `translate(0, 0)`;
+                            mon--;
+                        })();
+                    displayToggles.forEach(each => {
+                        each.classList.remove('in-view');
+                    });
+                    displayToggles[mon].classList.add('in-view');
+                    mon == 0 && (sliders[0].style.backgroundColor = 'rgba(0, 238, 255, 0.259)');
+                    sliders[1].style.backgroundColor = '#fff';
+                })() :
+                (() => {
+                    mon < 2 ? (() => {
+                        displays.style.transform = `translate(-${(mon * 100) + 100}%, 0)`;
+                        mon++;
+                    })() :
+                        mon == 2 && (() => {
+                            displays.style.transform = `translate(-${(mon * 100) + 100}%, 0)`;
+                            mon++;
+                        })();
+                    displayToggles.forEach(each => {
+                        each.classList.remove('in-view');
+                    });
+                    displayToggles[mon].classList.add('in-view');
+                    mon == 3 && (sliders[1].style.backgroundColor = 'rgba(0, 238, 255, 0.259)');
+                    sliders[0].style.backgroundColor = '#fff';
+                })();
+        });
+    });
+})();
