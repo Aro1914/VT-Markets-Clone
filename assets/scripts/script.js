@@ -186,20 +186,29 @@ links.forEach((link, index) => {
 
 // Funny Image code;
 
-var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-window.onscroll = function () {
-    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (previousPosition > currentPosition) {
-        console.log('scrolling up');
-    } else {
-        console.log('scrolling down');
-    }
+// var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    previousPosition = currentPosition;
-};
+// window.onscroll = function () {
+//     var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+//     let scrollPosition = 0;
+//     if (previousPosition > currentPosition) {
+//         console.log('scrolling up');
+//         scrollPositon++;
+//         funnyImage.forEach((image) => {
+//             image.style.transform = `translate(0, ${scrollPosition}px)`;
+//         });
+//     } else {
+//         console.log('scrolling down');
+//         scrollPositon--;
+//         funnyImage.forEach((image) => {
+//             image.style.transform = `translate(0, ${scrollPosition}px)`;
+//         });
+//     }
 
+//     previousPosition = currentPosition;
+// };
 
 
 (() => {
@@ -209,7 +218,7 @@ window.onscroll = function () {
                 each.classList.remove('in-view');
             });
             toggle.classList.add('in-view');
-            displays.style.transform = `translate(-${index * 100}%, 0)`;
+            displays.style.transform = `translate(calc(-${index * 100}% - ${index * 20}px), 0)`;
             mon = index;
             index == 0 ?
                 (sliders[0].style.backgroundColor = 'rgba(0, 238, 255, 0.259)',
@@ -228,7 +237,7 @@ window.onscroll = function () {
             index == 0 ?
                 (() => {
                     mon > 1 ? (() => {
-                        displays.style.transform = `translate(-${(mon * 100) - 100}%, 0)`;
+                        displays.style.transform = `translate(calc(-${(mon - 1) * 100}% - ${(mon - 1) * 20}px), 0)`;
                         mon--;
                     })() :
                         mon == 1 && (() => {
@@ -244,11 +253,11 @@ window.onscroll = function () {
                 })() :
                 (() => {
                     mon < 2 ? (() => {
-                        displays.style.transform = `translate(-${(mon * 100) + 100}%, 0)`;
+                        displays.style.transform = `translate(calc(-${(mon * 100) + 100}% - ${(mon * 20) + 20}px), 0)`;
                         mon++;
                     })() :
                         mon == 2 && (() => {
-                            displays.style.transform = `translate(-${(mon * 100) + 100}%, 0)`;
+                            displays.style.transform = `translate(calc(-${(mon + 1) * 100}% - ${(mon + 1) * 20}px), 0)`;
                             mon++;
                         })();
                     displayToggles.forEach(each => {

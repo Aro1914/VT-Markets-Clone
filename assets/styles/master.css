@@ -608,7 +608,6 @@ ul {
 .ghostly .parent {
   position: relative;
   width: 100%;
-  overflow: hidden;
   height: 647px;
 }
 
@@ -617,8 +616,9 @@ ul {
   display: flex;
   height: 647px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 20px;
   transition: transform 0.3s;
   /* transform: translate(-300%, 0); */
 }
@@ -636,7 +636,10 @@ ul {
 .funny-image {
   width: 55%;
   height: 100%;
+  position: relative;
   background-image: url(../images/home_swiper_row1_img1.png);
+  /* transform: translate(0, -50%); */
+  z-index: 1;
 }
 
 .text {
@@ -717,6 +720,18 @@ ul {
   height: 24px;
 }
 
+.d4 button {
+  background-color: #0051ff;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.d4 button:hover {
+  background-color: #00f0ff;
+  color: #000d28;
+  border: 1px solid #00f0ff;
+}
+
 .switchToLeft {
   left: 30px;
   background-color: rgba(0, 238, 255, 0.259);
@@ -754,10 +769,10 @@ ul {
   background-color: transparent;
 }
 
-.app-access .g-play{
+.app-access .g-play {
   background-image: url(../images/google_play_0426.png);
 }
 
-.app-access .a-store{
+.app-access .a-store {
   background-image: url(../images/app_store.webp);
 }
