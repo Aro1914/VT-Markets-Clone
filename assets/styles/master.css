@@ -573,6 +573,8 @@ ul {
   height: 722px;
   width: 100%;
   display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
   flex-wrap: wrap;
   gap: 50px;
   position: relative;
@@ -637,9 +639,27 @@ ul {
   width: 55%;
   height: 100%;
   position: relative;
-  background-image: url(../images/home_swiper_row1_img1.png);
-  /* transform: translate(0, -50%); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform .3s;
   z-index: 1;
+}
+
+.parent .displays > div:nth-child(1) .funny-image {
+  background-image: url(../images/home_swiper_row1_img1.png);
+}
+
+.parent .displays > div:nth-child(2) .funny-image {
+  background-image: url(../images/home_swiper_row1_img5.png);
+}
+
+.parent .displays > div:nth-child(4) .funny-image {
+  background-image: url(../images/home_swiper_row1_img4.png);
+}
+
+.parent .displays > div:nth-child(3) .funny-image {
+  background-image: url(../images/home_swiper_row1_img3.png);
 }
 
 .text {
@@ -775,4 +795,10 @@ ul {
 
 .app-access .a-store {
   background-image: url(../images/app_store.webp);
+}
+
+.promotions {
+  height: 700px;
+  width: 100%;
+  background-color: #ffffff;
 }

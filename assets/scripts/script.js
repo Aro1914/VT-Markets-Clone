@@ -11,9 +11,9 @@ const
     displayToggles = document.querySelectorAll('.display-toggles li'),
     displays = document.querySelector('.displays'),
     sliders = document.querySelectorAll('.ghostly [class^="switch"]'),
-    funnyImage = document.querySelectorAll('.funny-image');
+    funnyImage = document.querySelectorAll('.funny-image'),
+    parentGG = document.querySelector('.ghostly .parent');
 let toggle = true, mon = 0;
-
 
 [onClick, dismissal].forEach(el => el.addEventListener('click', () => {
     toggle = !toggle;
@@ -55,6 +55,7 @@ links.forEach((link, index) => {
 
     });
     hiddenContents[index].addEventListener('mouseover', () => {
+        clearTimeout(watcher);
         hiddenContents[index].style.display = 'flex';
     });
     hiddenContents[index].addEventListener('mouseout', () => {
@@ -158,15 +159,15 @@ links.forEach((link, index) => {
                     switch (counter) {
                         case 100:
                             indicate(1);
-                            console.log(counter, 0);
+                            // console.log(counter, 0);
                             break;
                         case 200:
                             indicate(2);
-                            console.log(counter, 1);
+                            // console.log(counter, 1);
                             break;
                         case 300:
                             indicate(0);
-                            console.log(counter, 2);
+                            // console.log(counter, 2);
                             break;
                         default:
                             break;
@@ -183,33 +184,6 @@ links.forEach((link, index) => {
         });
     });
 })();
-
-// Funny Image code;
-
-
-
-// var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-// window.onscroll = function () {
-//     var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-//     let scrollPosition = 0;
-//     if (previousPosition > currentPosition) {
-//         console.log('scrolling up');
-//         scrollPositon++;
-//         funnyImage.forEach((image) => {
-//             image.style.transform = `translate(0, ${scrollPosition}px)`;
-//         });
-//     } else {
-//         console.log('scrolling down');
-//         scrollPositon--;
-//         funnyImage.forEach((image) => {
-//             image.style.transform = `translate(0, ${scrollPosition}px)`;
-//         });
-//     }
-
-//     previousPosition = currentPosition;
-// };
-
 
 (() => {
     displayToggles.forEach((toggle, index) => {
@@ -270,3 +244,41 @@ links.forEach((link, index) => {
         });
     });
 })();
+
+// Funny Image code;
+var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+var scrollPosition = 0, scrollPosition2 = 0;
+window.onscroll = function () {
+    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    // console.log(previousPosition, currentPosition);
+    console.log(parentGG.scrollHeight);
+    window;
+    if (document.documentElement.scrollTop >= (parentGG.scrollHeight - 400) && document.documentElement.scrollTop <= ((parentGG.scrollHeight + parentGG.clientHeight + 100))) {
+        parentGG.style.borderTop = '5px solid #000';
+        parentGG.style.borderBottom = '5px solid #000';
+        if (previousPosition < currentPosition) {
+            currentPosition - previousPosition >= 3.5 && (scrollPosition -= 3.5);
+            // Going Up
+            funnyImage.forEach((image) => {
+                image.style.transform = `translate(0, ${(scrollPosition)}px)`;
+            });
+        } else {
+            previousPosition - currentPosition >= 3.5 && (scrollPosition += 3.5);
+            // Going Down
+            document.documentElement.scrollTop >= (parentGG.scrollHeight - 400)
+                &&
+                funnyImage.forEach((image) => {
+                    image.style.transform = `translate(0, ${(scrollPosition)}px)`;
+                });
+        }
+    } else {
+        funnyImage.forEach((image) => {
+            image.style.transform = `translate(0, 0)`;
+        });
+        parentGG.style.borderTop = '5px solid #fff';
+        parentGG.style.borderBottom = '5px solid #fff';
+        scrollPosition = 0;
+    };
+    previousPosition = currentPosition;
+};
