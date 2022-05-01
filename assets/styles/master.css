@@ -642,7 +642,7 @@ ul {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: transform .3s;
+  transition: transform 0.3s;
   z-index: 1;
 }
 
@@ -730,7 +730,7 @@ ul {
 }
 
 .ghostly [class^="switch"]:hover {
-  background-color: #00f0ff;
+  background-color: #00f0ff !important;
 }
 
 .ghostly [class^="switch"]::after {
@@ -798,7 +798,105 @@ ul {
 }
 
 .promotions {
-  height: 700px;
-  width: 100%;
+  padding: 100px 0;
+  max-width: 70%;
+  margin: 0 auto;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.promotions .big-text {
+  width: 100%;
+  margin-bottom: 30px;
+  display: block;
+  font-size: 56px;
+  font-family: "Oblivian Text Medium";
+}
+
+.promotions .small-texts {
+  line-height: 1.5;
+  margin-bottom: 23px;
+  font-size: 20px;
+  font-weight: 100;
+  display: block;
+  font-family: "Oblivian Text UltraLight";
+  width: 100%;
+}
+
+.offers {
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+  max-width: 840px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.offers .offer {
+  width: 49%;
+  position: relative;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer .biggest {
+  font-size: 96px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Oblivian Text Semi-Bold";
+}
+
+.offers::after {
+  content: "";
+  display: block;
+  width: 1px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  background: #e5e7e9;;
+}
+
+.offer .bigger {
+  font-size: 24px;
+  margin-bottom: 18px;
+  font-weight: bold;
+  font-family: "Oblivian Text Medium";
+}
+
+.offer .blue-star {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  background: #00f0ff url(../images/icons_star.png) center 9px no-repeat;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.offer .promo-link {
+  color: #135aff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.promotions .open-acct {
+  margin-top: 50px;
+  background: #0051ff;
+  border-radius: 35px;
+  padding: 14px 20px 12px;
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #0051ff;
+  text-decoration: none;
+  font-family: "Oblivian Text Medium";
 }

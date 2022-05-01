@@ -187,6 +187,7 @@ links.forEach((link, index) => {
 
 (() => {
     displayToggles.forEach((toggle, index) => {
+        // toggle.style.backgroundColor = '#000';
         toggle.addEventListener('click', () => {
             displayToggles.forEach(each => {
                 each.classList.remove('in-view');
@@ -246,28 +247,27 @@ links.forEach((link, index) => {
 })();
 
 // Funny Image code;
-var previousPosition = window.pageYOffset || document.documentElement.scrollTop;
-var scrollPosition = 0, scrollPosition2 = 0;
+let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+let scrollPosition = 0;
 window.onscroll = function () {
-    var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-
+    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
     // console.log(previousPosition, currentPosition);
     console.log(parentGG.scrollHeight);
     window;
     if (document.documentElement.scrollTop >= (parentGG.scrollHeight - 400) && document.documentElement.scrollTop <= ((parentGG.scrollHeight + parentGG.clientHeight + 100))) {
-        parentGG.style.borderTop = '5px solid #000';
-        parentGG.style.borderBottom = '5px solid #000';
         if (previousPosition < currentPosition) {
-            currentPosition - previousPosition >= 3.5 && (scrollPosition -= 3.5);
             // Going Up
-            funnyImage.forEach((image) => {
-                image.style.transform = `translate(0, ${(scrollPosition)}px)`;
-            });
+            // document.documentElement.scrollTop >= (parentGG.scrollHeight + 300)
+            //     &&
+                currentPosition - previousPosition >= 1 && (scrollPosition -= 2.5),
+                funnyImage.forEach((image) => {
+                    image.style.transform = `translate(0, ${(scrollPosition)}px)`;
+                });
         } else {
-            previousPosition - currentPosition >= 3.5 && (scrollPosition += 3.5);
             // Going Down
-            document.documentElement.scrollTop >= (parentGG.scrollHeight - 400)
-                &&
+            // document.documentElement.scrollTop <= (parentGG.scrollHeight + 300)
+            //     &&
+                previousPosition - currentPosition >= 1 && (scrollPosition += 2),
                 funnyImage.forEach((image) => {
                     image.style.transform = `translate(0, ${(scrollPosition)}px)`;
                 });
@@ -276,8 +276,6 @@ window.onscroll = function () {
         funnyImage.forEach((image) => {
             image.style.transform = `translate(0, 0)`;
         });
-        parentGG.style.borderTop = '5px solid #fff';
-        parentGG.style.borderBottom = '5px solid #fff';
         scrollPosition = 0;
     };
     previousPosition = currentPosition;
