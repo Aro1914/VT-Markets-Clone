@@ -13,7 +13,8 @@ const
     sliders = document.querySelectorAll('.ghostly [class^="switch"]'),
     funnyImage = document.querySelectorAll('.funny-image'),
     parentGG = document.querySelector('.ghostly .parent');
-let toggle = true, mon = 0;
+let toggle = true,
+    mon = 0;
 
 [onClick, dismissal].forEach(el => el.addEventListener('click', () => {
     toggle = !toggle;
@@ -246,37 +247,35 @@ links.forEach((link, index) => {
     });
 })();
 
-// Funny Image code;
-let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
-let scrollPosition = 0;
-window.onscroll = function () {
-    const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-    // console.log(previousPosition, currentPosition);
-    console.log(parentGG.scrollHeight);
-    window;
-    if (document.documentElement.scrollTop >= (parentGG.scrollHeight - 400) && document.documentElement.scrollTop <= ((parentGG.scrollHeight + parentGG.clientHeight + 100))) {
-        if (previousPosition < currentPosition) {
-            // Going Up
-            // document.documentElement.scrollTop >= (parentGG.scrollHeight + 300)
-            //     &&
+(() => {
+    let previousPosition = window.pageYOffset || document.documentElement.scrollTop;
+    let scrollPosition = 0;
+    window.onscroll = () => {
+        const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(parentGG.scrollHeight);
+        window;
+        if (document.documentElement.scrollTop >= (parentGG.scrollHeight - 400) && document.documentElement.scrollTop <= ((parentGG.scrollHeight + parentGG.clientHeight + 100))) {
+            if (previousPosition < currentPosition) {
                 currentPosition - previousPosition >= 1 && (scrollPosition -= 2.5),
-                funnyImage.forEach((image) => {
-                    image.style.transform = `translate(0, ${(scrollPosition)}px)`;
-                });
-        } else {
-            // Going Down
-            // document.documentElement.scrollTop <= (parentGG.scrollHeight + 300)
-            //     &&
+                    funnyImage.forEach((image) => {
+                        image.style.transform = `translate(0, ${(scrollPosition)}px)`;
+                    });
+            } else {
                 previousPosition - currentPosition >= 1 && (scrollPosition += 2),
-                funnyImage.forEach((image) => {
-                    image.style.transform = `translate(0, ${(scrollPosition)}px)`;
-                });
-        }
-    } else {
-        funnyImage.forEach((image) => {
-            image.style.transform = `translate(0, 0)`;
-        });
-        scrollPosition = 0;
+                    funnyImage.forEach((image) => {
+                        image.style.transform = `translate(0, ${(scrollPosition)}px)`;
+                    });
+            }
+        } else {
+            funnyImage.forEach((image) => {
+                image.style.transform = `translate(0, 0)`;
+            });
+            scrollPosition = 0;
+        };
+        previousPosition = currentPosition;
     };
-    previousPosition = currentPosition;
-};
+})();
+
+(() => {
+
+})();

@@ -902,23 +902,26 @@ ul {
 }
 
 .helping {
+  position: relative;
   padding: 0 0 80px 80px;
   background-color: #f9f9f9;
   padding-top: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   color: #000d28;
+  max-width: 1167.2px;
+  margin: 0 auto;
 }
 
-.text-content {
+.helping .text-content {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
 }
 
-.text-content .heading {
+.helping .text-content .heading {
   display: block;
   width: 100%;
   font-size: 56px;
@@ -928,7 +931,7 @@ ul {
   font-family: "Oblivian Text Medium";
 }
 
-.text-content .image {
+.helping .text-content .image {
   width: 160px;
   height: 100px;
   background-size: contain;
@@ -937,7 +940,7 @@ ul {
   background-image: url(../images/home_text_and_image_wrapper_icon1.webp);
 }
 
-.text-content > .text {
+.helping .text-content > .text {
   width: calc(100% - 160px);
   display: flex;
   justify-content: flex-start;
@@ -947,7 +950,7 @@ ul {
   padding-left: 30px;
 }
 
-.text .main {
+.helping .text .main {
   display: block;
   width: 100%;
   margin-bottom: 20px;
@@ -956,11 +959,11 @@ ul {
   margin: 0px 0px 23px;
 }
 
-.text > span:nth-child(2) {
+.helping .text > span:nth-child(2) {
   padding-top: 18px;
 }
 
-.text .sub-text {
+.helping .text .sub-text {
   font-weight: bold;
   font-size: 18px;
   padding-bottom: 8px;
@@ -969,22 +972,492 @@ ul {
   font-family: "Oblivian Text Medium";
 }
 
-.text .text {
+.helping .text .text {
   font-weight: normal;
   padding: 0px 0px 26px;
   margin: 0px;
   line-height: 1.5;
 }
 
-.h-funny-image {
+.helping .h-funny-image {
+  position: absolute;
+  right: -20px;
   height: 500px;
   width: 40%;
   position: relative;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: cover;
+  background-position: contain;
   background-image: url(../images/home_text_and_img11.webp);
   transition: transform 0.3s;
   z-index: 1;
   box-shadow: 12px 20px 35px rgb(65 107 197 / 50%);
+}
+
+.inside-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 1176px;
+  margin: 0px auto;
+  max-width: 100%;
+  background-image: url(../images/home_protrader_tools_bg.png);
+  padding: 55px 75px;
+  box-shadow: 0px 20px 35px rgb(65 107 197 / 50%);
+  margin-bottom: 100px;
+}
+
+.inside-view .news {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inside-view .subscribe {
+  padding: 0 0 0 60px;
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.inside-view .view {
+  width: 60%;
+  text-align: left;
+}
+
+.inside-view .f {
+  display: block;
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 50px;
+  font-family: "Oblivian Text Medium";
+}
+
+.inside-view .s {
+  color: #ffffff;
+  font-size: 40px;
+  line-height: 1.5;
+  margin: 0px 0px 23px;
+}
+
+.inside-view .list {
+  width: 40%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.inside-view .list li {
+  padding: 0px 0px 20px 45px;
+  margin: 0px;
+  background: url(../images/home_protrader_tools_list_icon.webp) left top
+    no-repeat;
+  font-family: "Oblivian Text Medium";
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.inside-view .list li:last-of-type {
+  padding: 0 0 0 45px;
+}
+
+.inside-view .some-text {
+  line-height: 1.7;
+  color: #fff;
+}
+
+.inside-view .some-text strong {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Oblivian Text Semi-Bold";
+}
+
+.inside-view .subscribe button {
+  background: #fff;
+  border-radius: 35px;
+  padding: 14px 20px 12px;
+  color: #06122d;
+  font-size: 15px;
+  border: 1px solid #fff;
+  font-family: "Oblivian Text Medium";
+}
+
+.inside-view .subscribe button:hover {
+  background-color: #00f0ff;
+  border-color: #00f0ff;
+}
+
+.speed {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  padding: 100px 0 80px;
+  width: 1167.2px;
+  margin: 0 auto;
+}
+
+.speed .s-funny-image {
+  position: absolute;
+  left: -20px;
+  width: 40%;
+  height: 717px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/home_text_and_image_wrapper_img21.webp);
+  box-shadow: -12px 20px 35px rgb(65 107 197 / 50%);
+}
+
+.speed .content {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.speed .theme {
+  width: 100%;
+  font-size: 56px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+}
+
+.speed .content .main-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.speed .text-content {
+  width: 70%;
+  padding: 0 20px;
+}
+
+.speed .text-content .text {
+  display: inline-block;
+  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0 0 23px;
+  font-family: "Oblivian Text UltraLight";
+  margin-bottom: calc(18px + 23px);
+}
+
+.speed .text-content .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.speed .text-content .list li {
+  padding: 0 0 23px 38px;
+  margin: 0;
+  background: url(../images/home_text_and_image_tick_list_icon.webp) left 3px
+    no-repeat;
+  font-family: "Oblivian Text Medium";
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.speed .text-content button {
+  background: #0051ff;
+  border-radius: 35px;
+  padding: 14px 20px 12px;
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #0051ff;
+  text-decoration: none;
+  font-family: "Oblivian Text Medium";
+}
+
+.speed .text-content button:hover {
+  background-color: #00f0ff;
+  border-color: #00f0ff;
+  color: #06122d;
+}
+
+.speed .content .main-content .image {
+  width: 30%;
+  height: 400px;
+  background-size: 150px;
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  background-image: url(../images/home_text_and_image_wrapper_icon2.png);
+}
+
+.safe-hands {
+  position: relative;
+  padding: 0 0 80px 50px;
+  background-color: #f9f9f9;
+  padding-top: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: #000d28;
+  max-width: 1167.2px;
+  margin: 150px auto 0;
+}
+
+.safe-hands .text-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 55%;
+}
+
+.safe-hands .text-content .heading {
+  display: block;
+  width: 100%;
+  font-size: 56px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+}
+
+.safe-hands .text-content .image {
+  width: 160px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/home_text_and_image_wrapper_icon3.png);
+}
+
+.safe-hands .text-content > .text {
+  width: calc(100% - 160px);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 30px;
+}
+
+.safe-hands .text .main {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0px 0px 23px;
+}
+
+.safe-hands .text-content .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.safe-hands .text-content .list li {
+  padding: 0 0 23px 38px;
+  margin: 0;
+  background: url(../images/home_text_and_image_tick_list_icon.webp) left 3px
+    no-repeat;
+  font-family: "Oblivian Text Medium";
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.safe-hands .sh-funny-image {
+  position: absolute;
+  right: 0;
+  width: 45%;
+  text-align: center;
+  padding: 32px 40px 30px;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.safe-hands .sh-funny-image::after {
+  content: "";
+  height: 50px;
+  width: calc(100% + (20px * 2));
+  display: block;
+  margin: 0 auto;
+  right: -20px;
+  bottom: -50px;
+  opacity: 0.2;
+  position: absolute;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/home_text_and_image_wrapper_shadow.png);
+}
+
+.sh-funny-image .f-section {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.sh-funny-image .f-section .theme {
+  margin-bottom: 35px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+  width: 100%;
+}
+
+.sh-funny-image .f-section > div {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sh-funny-image .f-section > div > div {
+  height: 100px;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sh-funny-image .f-section > div > span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: "Oblivian Text Regular";
+  padding-top: 20px;
+}
+
+.sh-funny-image .f-section .one .image {
+  background-image: url(../images/home_text_and_image_icon1_1.webp);
+}
+
+.sh-funny-image .f-section .two .image {
+  background-image: url(../images/home_text_and_image_icon2.png);
+}
+
+.sh-funny-image .f-section .three .image {
+  background-image: url(../images/home_text_and_image_icon3.png);
+}
+
+.sh-funny-image .s-section {
+  padding-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sh-funny-image .s-section .theme {
+  margin-bottom: 35px;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+  width: 100%;
+}
+
+.sh-funny-image .s-section > div {
+  width: 33.33%;
+  height: 100px;
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sh-funny-image .s-section .one {
+  background-image: url(../images/home_text_and_image_bottom_icon1.png);
+}
+
+.sh-funny-image .s-section .two {
+  background-image: url(../images/home_text_and_image_bottom_icon2.png);
+}
+
+.sh-funny-image .s-section .three {
+  background-image: url(../images/home_text_and_image_bottom_icon3.png);
+}
+
+.sh-funny-image .s-section .four {
+  background-image: url(../images/home_text_and_image_bottom_icon4.png);
+}
+
+.sh-funny-image .s-section .five {
+  background-image: url(../images/home_text_and_image_bottom_icon5.png);
+}
+
+.sh-funny-image .s-section .six {
+  background-image: url(../images/home_text_and_image_bottom_icon6.png);
+}
+
+.safe-hands .text-content button {
+  background: #0051ff;
+  border-radius: 35px;
+  padding: 14px 20px 12px;
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #0051ff;
+  text-decoration: none;
+  font-family: "Oblivian Text Medium";
+}
+
+.safe-hands .text-content button:hover {
+  background-color: #00f0ff;
+  border-color: #00f0ff;
+  color: #06122d;
+}
+
+.liquid {
+  width: 100%;
+  margin-top: 85px;
+  text-align: center;
+}
+
+.liquid .theme {
+  display: block;
+  font-size: 56px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+}
+
+.liquid .text {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.5;
 }
