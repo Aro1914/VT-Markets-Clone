@@ -662,7 +662,7 @@ ul {
   background-image: url(../images/home_swiper_row1_img3.png);
 }
 
-.text {
+.parent .text {
   width: 45%;
   display: flex;
   flex-wrap: wrap;
@@ -674,7 +674,7 @@ ul {
   padding-bottom: 20px;
 }
 
-.text span {
+.parent .text span {
   display: block;
 }
 
@@ -691,7 +691,7 @@ ul {
   line-height: 1.2;
 }
 
-.text ul {
+.parent .text ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -699,12 +699,12 @@ ul {
   font-family: "Oblivian Text Medium";
 }
 
-.text ul li {
+.parent .text ul li {
   padding-left: 35px;
   background: url(../images/icons-tools-tick.webp) no-repeat left center;
 }
 
-.text button {
+.parent .text button {
   min-width: 178px;
   background: #fff;
   border-radius: 35px;
@@ -862,7 +862,7 @@ ul {
   left: 50%;
   top: 0;
   bottom: 0;
-  background: #e5e7e9;;
+  background: #e5e7e9;
 }
 
 .offer .bigger {
@@ -899,4 +899,92 @@ ul {
   border: 1px solid #0051ff;
   text-decoration: none;
   font-family: "Oblivian Text Medium";
+}
+
+.helping {
+  padding: 0 0 80px 80px;
+  background-color: #f9f9f9;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: #000d28;
+}
+
+.text-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.text-content .heading {
+  display: block;
+  width: 100%;
+  font-size: 56px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+}
+
+.text-content .image {
+  width: 160px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../images/home_text_and_image_wrapper_icon1.webp);
+}
+
+.text-content > .text {
+  width: calc(100% - 160px);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-left: 30px;
+}
+
+.text .main {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0px 0px 23px;
+}
+
+.text > span:nth-child(2) {
+  padding-top: 18px;
+}
+
+.text .sub-text {
+  font-weight: bold;
+  font-size: 18px;
+  padding-bottom: 8px;
+  display: block;
+  font-weight: normal;
+  font-family: "Oblivian Text Medium";
+}
+
+.text .text {
+  font-weight: normal;
+  padding: 0px 0px 26px;
+  margin: 0px;
+  line-height: 1.5;
+}
+
+.h-funny-image {
+  height: 500px;
+  width: 40%;
+  position: relative;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: cover;
+  background-image: url(../images/home_text_and_img11.webp);
+  transition: transform 0.3s;
+  z-index: 1;
+  box-shadow: 12px 20px 35px rgb(65 107 197 / 50%);
 }
