@@ -11,10 +11,14 @@ const
     displayToggles = document.querySelectorAll('.display-toggles li'),
     displays = document.querySelector('.displays'),
     sliders = document.querySelectorAll('.ghostly [class^="switch"]'),
+    displayToggles_2 = document.querySelectorAll('div._2 .display-toggles li'),
+    displays_2 = document.querySelector('div._2 .displays'),
+    sliders_2 = document.querySelectorAll('div._2 [class^="switch"]'),
     funnyImage = document.querySelectorAll('.funny-image'),
     parentGG = document.querySelector('.ghostly .parent');
 let toggle = true,
-    mon = 0;
+    mon = 0,
+    mon_2 = 0;
 
 [onClick, dismissal].forEach(el => el.addEventListener('click', () => {
     toggle = !toggle;
@@ -79,15 +83,12 @@ links.forEach((link, index) => {
         switch (counter) {
             case 100:
                 indicate(1);
-                console.log(counter, 0);
                 break;
             case 200:
                 indicate(2);
-                console.log(counter, 1);
                 break;
             case 300:
                 indicate(0);
-                console.log(counter, 2);
                 break;
             default:
                 break;
@@ -160,15 +161,12 @@ links.forEach((link, index) => {
                     switch (counter) {
                         case 100:
                             indicate(1);
-                            // console.log(counter, 0);
                             break;
                         case 200:
                             indicate(2);
-                            // console.log(counter, 1);
                             break;
                         case 300:
                             indicate(0);
-                            // console.log(counter, 2);
                             break;
                         default:
                             break;
@@ -252,7 +250,6 @@ links.forEach((link, index) => {
     let scrollPosition = 0;
     window.onscroll = () => {
         const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(parentGG.scrollHeight);
         window;
         if (document.documentElement.scrollTop >= (parentGG.scrollHeight - 400) && document.documentElement.scrollTop <= ((parentGG.scrollHeight + parentGG.clientHeight + 100))) {
             if (previousPosition < currentPosition) {
@@ -277,5 +274,62 @@ links.forEach((link, index) => {
 })();
 
 (() => {
+    displayToggles_2.forEach((toggle, index) => {
+        // toggle.style.backgroundColor = '#000';
+        toggle.addEventListener('click', () => {
+            displayToggles_2.forEach(each => {
+                each.classList.remove('in-view');
+            });
+            toggle.classList.add('in-view');
+            displays_2.style.transform = `translate(calc(-${index * 100}% - ${index * 20}px), 0)`;
+            mon_2 = index;
+            index == 0 ?
+                (sliders_2[0].style.backgroundColor = 'rgba(0, 238, 255, 0.259)',
+                    sliders_2[1].style.backgroundColor = '#fff') :
+                index == 3 ?
+                    (sliders_2[1].style.backgroundColor = 'rgba(0, 238, 255, 0.259)',
+                        sliders_2[0].style.backgroundColor = '#fff') :
+                    sliders_2.forEach(slider => {
+                        slider.style.backgroundColor = '#fff';
+                    });
+        });
+    });
 
+    sliders_2.forEach((slider, index) => {
+        slider.addEventListener('click', () => {
+            index == 0 ?
+                (() => {
+                    mon_2 > 1 ? (() => {
+                        displays.style.transform = `translate(calc(-${(mon_2 - 1) * 100}% - ${(mon_2 - 1) * 20}px), 0)`;
+                        mon_2--;
+                    })() :
+                        mon_2 == 1 && (() => {
+                            displays.style.transform = `translate(0, 0)`;
+                            mon_2--;
+                        })();
+                    displayToggles_2.forEach(each => {
+                        each.classList.remove('in-view');
+                    });
+                    displayToggles_2[mon_2].classList.add('in-view');
+                    mon_2 == 0 && (sliders_2[0].style.backgroundColor = 'rgba(0, 238, 255, 0.259)');
+                    sliders_2[1].style.backgroundColor = '#fff';
+                })() :
+                (() => {
+                    mon_2 < 2 ? (() => {
+                        displays_2.style.transform = `translate(calc(-${(mon_2 * 100) + 100}% - ${(mon_2 * 20) + 20}px), 0)`;
+                        mon_2++;
+                    })() :
+                        mon_2 == 2 && (() => {
+                            displays_2.style.transform = `translate(calc(-${(mon_2 + 1) * 100}% - ${(mon_2 + 1) * 20}px), 0)`;
+                            mon_2++;
+                        })();
+                    displayToggles_2.forEach(each => {
+                        each.classList.remove('in-view');
+                    });
+                    displayToggles_2[mon_2].classList.add('in-view');
+                    mon_2 == 3 && (sliders_2[1].style.backgroundColor = 'rgba(0, 238, 255, 0.259)');
+                    sliders_2[0].style.backgroundColor = '#fff';
+                })();
+        });
+    });
 })();
