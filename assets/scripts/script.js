@@ -8,9 +8,9 @@ const
     heros = document.querySelectorAll('.hero [class^="div"]'),
     heroes = document.querySelector('.heroes'),
     indicators = document.querySelectorAll('.hero .indicators div'),
-    displayToggles = document.querySelectorAll('.display-toggles li'),
-    displays = document.querySelector('.displays'),
-    sliders = document.querySelectorAll('.ghostly [class^="switch"]'),
+    displayToggles = document.querySelectorAll('.ghostly .display-toggles li:not(.ghostly._2 .display-toggles li)'),
+    displays = document.querySelector('.ghostly .displays:not(.ghostly._2 .displays)'),
+    sliders = document.querySelectorAll('.ghostly [class^="switch"]:not(.ghostly._2 [class^="switch"])'),
     displayToggles_2 = document.querySelectorAll('div._2 .display-toggles li'),
     displays_2 = document.querySelector('div._2 .displays'),
     sliders_2 = document.querySelectorAll('div._2 [class^="switch"]'),
@@ -300,11 +300,11 @@ links.forEach((link, index) => {
             index == 0 ?
                 (() => {
                     mon_2 > 1 ? (() => {
-                        displays.style.transform = `translate(calc(-${(mon_2 - 1) * 100}% - ${(mon_2 - 1) * 20}px), 0)`;
+                        displays_2.style.transform = `translate(calc(-${(mon_2 - 1) * 100}% - ${(mon_2 - 1) * 20}px), 0)`;
                         mon_2--;
                     })() :
                         mon_2 == 1 && (() => {
-                            displays.style.transform = `translate(0, 0)`;
+                            displays_2.style.transform = `translate(0, 0)`;
                             mon_2--;
                         })();
                     displayToggles_2.forEach(each => {

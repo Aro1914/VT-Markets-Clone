@@ -903,7 +903,7 @@ ul {
 
 .helping {
   position: relative;
-  padding: 0 0 80px 80px;
+  padding: 0 20px 80px 60px;
   background-color: #f9f9f9;
   padding-top: 100px;
   display: flex;
@@ -1111,7 +1111,8 @@ ul {
   flex-wrap: wrap;
   background-color: #f9f9f9;
   padding: 100px 0 80px;
-  width: 1167.2px;
+  max-width: 1167.2px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -1615,6 +1616,151 @@ ul {
   background-image: url(../images/14.png);
 }
 
+div._2 {
+  margin-bottom: 120px;
+}
+
 div._2 .displays [class^="d"] {
   background: url(../images/home_slide_row2_bg_new.jpg) no-repeat center;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 75px 75px 40px;
+  gap: 0;
+  flex-direction: column;
+}
+
+div._2 .displays [class^="d"] .heading,
+div._2 .displays [class^="d"] .body {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  color: #00f0ff;
+  font-family: "Oblivian Text Semi-Bold";
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.42;
+}
+
+div._2 .displays [class^="d"] .heading {
+  padding: 32px;
+}
+
+div._2 .displays [class^="d"] .heading li {
+  text-align: center;
+  width: 170px;
+}
+
+div._2 .displays [class^="d"] .body li {
+  width: 100%;
+  text-align: left;
+  padding: 32px;
+  border-top: 1px solid rgb(118, 168, 249);
+}
+
+.global {
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 768px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 150px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-position: right center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/globe/1.png);
+  animation: globe 30s linear infinite normal none;
+}
+
+@keyframes globe {
+  0% {
+    background-image: url(../images/globe/1.png);
+  }
+  5.556% {
+    background-image: url(../images/globe/2.png);
+  }
+  11.112% {
+    background-image: url(../images/globe/3.png);
+  }
+  16.668% {
+    background-image: url(../images/globe/4.png);
+  }
+  22.224% {
+    background-image: url(../images/globe/5.png);
+  }
+  27.78% {
+    background-image: url(../images/globe/6.png);
+  }
+  33.336% {
+    background-image: url(../images/globe/7.png);
+  }
+  38.892% {
+    background-image: url(../images/globe/8.png);
+  }
+  44.448% {
+    background-image: url(../images/globe/9.png);
+  }
+  50.004% {
+    background-image: url(../images/globe/10.png);
+  }
+  55.56% {
+    background-image: url(../images/globe/11.png);
+  }
+  61.116% {
+    background-image: url(../images/globe/12.png);
+  }
+  66.672% {
+    background-image: url(../images/globe/13.png);
+  }
+  72.228% {
+    background-image: url(../images/globe/14.png);
+  }
+  77.784% {
+    background-image: url(../images/globe/15.png);
+  }
+  83.34% {
+    background-image: url(../images/globe/16.png);
+  }
+  88.896% {
+    background-image: url(../images/globe/17.png);
+  }
+  94.452% {
+    background-image: url(../images/globe/18.png);
+  }
+  100% {
+    background-image: url(../images/globe/1.png);
+  }
+}
+
+.global > .text {
+  width: 45%;
+  text-align: left;
+}
+
+.global > .text .theme {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 78px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  font-family: "Oblivian Text Medium";
+}
+
+.global > .text .text {
+  display: block;
+  line-height: 1.5;
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 0px 0px 23px;
 }
