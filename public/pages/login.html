@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./public/assets/fonts/oblivian-text-cufonfonts-webfont/style.css">
+        <link rel="stylesheet" href="./public/assets/styles/login.css">
+        <link rel="stylesheet" href="./public/assets/styles/bootstrap-icons.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/images/favicon.ico">
+        <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/images/favicon-16x16.png">
+        <title>Secure Client Portal</title>
+    </head>
+
+    <body>
+        <section class="body">
+            <div class="help">
+                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+                    <g id="Layer_4">
+                        <path
+                            d="M11,12.3V13c0,0-1.8,0-2,0v-0.6c0-0.6,0.1-1.4,0.8-2.1c0.7-0.7,1.6-1.2,1.6-2.1c0-0.9-0.7-1.4-1.4-1.4 c-1.3,0-1.4,1.4-1.5,1.7H6.6C6.6,7.1,7.2,5,10,5c2.4,0,3.4,1.6,3.4,3C13.4,10.4,11,10.8,11,12.3z">
+                        </path>
+                        <circle cx="10" cy="15" r="1"></circle>
+                        <path
+                            d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2 M10,0C4.5,0,0,4.5,0,10s4.5,10,10,10s10-4.5,10-10S15.5,0,10,0 L10,0z">
+                        </path>
+                    </g>
+                </svg>Help
+            </div>
+            <header>
+                <a href="">
+                    <img src="./public/assets/images/logo.webp" alt="">
+                </a>
+                <a href="">
+                    <img src="./public/assets/images/header_en_flag.webp" alt="">
+                </a>
+            </header>
+            <section class="main">
+                <section class="banner">
+                    <div class="login-pg">
+                        <div>
+                            <img src="./public/assets/images/logo.webp" alt="">
+                        </div>
+                        <div>
+                            <form action="" class="form">
+                                <div>
+                                    <label id="emal" for="email"> <span>*</span> Email</label>
+                                    <input type="email" autocomplete="none" name="email" class="input" id="einput"
+                                        required onclick="valform()">
+                                    <div id="eerr">Email address is required</div>
+                                </div>
+                                <div>
+                                    <label id="pswd" for="password"><span>*</span> Password</label>
+                                    <input type="password" name='password' class="input" id="pinput">
+                                    <div id="perr">Password is required</div>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Login" id="login">
+                                </div>
+                                <script>
+                                    var emal = document.getElementById("emal");
+                                    var pswd = document.getElementById("pswd");
+                                    var einput = document.getElementById("einput");
+                                    var pinput = document.getElementById("pinput");
+
+                                    einput.onblur = function () {
+                                        if (einput.value == "") {
+                                            emal.style.color = "#e91d2c";
+                                            document.getElementById('eerr').style.display = 'block';
+                                            einput.style.borderColor = '#e91d2c';
+                                            emal.style.top = '10px';
+                                            emal.style.fontSize = '16px';
+                                        }
+
+                                        else {
+                                            emal.style.color = "#0051ff";
+                                            document.getElementById('eerr').style.display = 'none';
+                                            einput.style.borderColor = '#cccfd4';
+                                            emal.style.top = '-16px';
+                                            emal.style.fontSize = '14px';
+                                        }
+                                    };
+
+                                    pinput.onblur = function () {
+                                        if (pinput.value == "") {
+                                            pswd.style.color = "#e91d2c";
+                                            document.getElementById('perr').style.display = 'block';
+                                            pinput.style.borderColor = '#e91d2c';
+                                            pswd.style.top = '10px';
+                                            pswd.style.fontSize = '16px';
+                                        }
+                                        if (pinput.value !== "") {
+                                            pswd.style.color = "#0051ff";
+                                            document.getElementById('perr').style.display = 'none';
+                                            pinput.style.borderColor = '#cccfd4';
+                                            pswd.style.top = '-10px';
+                                            pswd.style.fontSize = '14px';
+                                        }
+
+                                    };
+
+                                    einput.onfocus = function () {
+                                        emal.style.top = '-16px';
+                                        emal.style.fontSize = '14px';
+                                    };
+                                    pinput.onfocus = function () {
+                                        pswd.style.top = '-10px';
+                                        pswd.style.fontSize = '14px';
+                                    }
+
+                                </script>
+                            </form>
+                            <a id="fgtpsw">Forgot password?</a>
+                        </div>
+                        <div></div>
+                    </div>
+                </section>
+                <footer>
+                    <section>
+                        <div>
+                            <a href="">
+                                <img src="./public/assets/images/logo.webp" alt="">
+                            </a>
+                            <ul>
+                                <li><a href="">Trading</a></li>
+                                <li><a href="">Tools</a></li>
+                                <li><a href="">Promotions</a></li>
+                                <li><a href="">About&nbsp;us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Contact us</h2>
+                            <ul>
+                                <li> 4th Floor The Harbour Centre <br> 42 N Church St <br> George Town, Cayman Islands
+                                </li>
+                                <li >
+                                    <img src="./public/assets/images/message.png" alt="">
+                                    <a style="text-decoration: none !important;">info@vtmarkets.com</a>
+                                </li>
+                                <li >
+                                    <img src="./public/assets/images/livechat.png" alt="">
+                                    <a style="text-decoration: none !important;">Live Chat</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>Funding methods</h2>
+                            <div>
+                                <a href="">
+                                    <img height="25px" src="./public/assets/images/visa.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img height="38px" src="./public/assets/images/master.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img height="44px" src="./public/assets/images/swift.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img height="35px" src="./public/assets/images/union.png" alt="">
+                                </a>
+                            </div>
+                            <h2>Custodian bank</h2>
+                            <img src="./public/assets/images/common.png" alt="">
+                        </div>
+                    </section>
+                    <div>
+                        <a href="">Legal Documents</a>
+                        <a href="">Privacy Policy</a>
+                    </div>
+                </footer>
+                <section class="last-footer">
+                    <div>
+                        <h3>Risk warning: </h3> Trading Forex and CFDs involves significant risk and can result in the
+                        loss of your invested capital. You should not invest more than you can afford to lose and should
+                        ensure that you fully understand the risks involved. Trading leveraged products may not be
+                        suitable for all investors. Before trading, please take into consideration your level of
+                        experience, investment objectives and seek independent financial advice if necessary. Please
+                        read our legal documents and ensure that you fully understand the risks before you make any
+                        trading decisions.
+                    </div>
+                    <div>
+                        <h3>General advice warning:</h3> The information in this website is of a general nature only and
+                        the advice has been prepared without taking account of your objectives, financial situation or
+                        needs. Accordingly, before acting on the advice, you should consider the appropriateness of the
+                        advice having regard to your objectives, financial situation and needs, and after considering
+                        the legal documents.
+                    </div>
+                    <div>
+                        <h3>Regional restrictions:</h3> We do not offer our services to residents of certain
+                        jurisdictions such as North Korea, Japan, United States and some other regions. For more
+                        information please refer to our FAQ page.
+                    </div>
+                </section>
+            </section>
+        </section>
+    </body>
+
+</html>
